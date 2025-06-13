@@ -4,6 +4,8 @@ import {  useNavigate, useParams } from "react-router";
 
 const Sendmoney = () => {
   const params = useParams();
+  const to:string = params.to as string
+  const toi = to.slice(1,-1)
   const navigate = useNavigate();
   const token = localStorage.getItem("jwt");
   if(!token) return <div>You Dont Have An Account</div>
@@ -19,7 +21,7 @@ const Sendmoney = () => {
       const res = await axios.post(
         "https://paytm-back.vercel.app/api/v1/account/transfer/",
         {
-          to: params.to,
+          to: toi,
           amount: Amountref.current.value,
         },
         {
