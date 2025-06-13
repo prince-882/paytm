@@ -17,7 +17,7 @@ const Signup = () => {
   const [message, Setmessage] = useState("");
   async function SignUp() {
     try {
-      const data = await axios.post("https://paytm-backend-steel.vercel.app/api/v1/user/signup/", {
+      const data = await axios.post("https://paytm-back.vercel.app/api/v1/user/signup/", {
         username: emailref.current.value,
         password: passwordref.current.value,
         firstname: firstnameref.current.value,

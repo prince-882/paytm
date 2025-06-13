@@ -25,7 +25,7 @@ const Dashboard = () => {
    username: string;
  }
   async function GetUsers(e: React.ChangeEvent<HTMLInputElement>) {
-    const data = await axios.get("https://paytm-backend-steel.vercel.app/api/v1/user/bulk/", {
+    const data = await axios.get("https://paytm-back.vercel.app/api/v1/user/bulk/", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -36,7 +36,7 @@ const Dashboard = () => {
     setUsers(data.data.users.filter((item:User) => item._id!== decoded.userId ));
   }
   useEffect(() => {
-  axios.get("https://paytm-backend-steel.vercel.app/api/v1/account/balance",
+  axios.get("https://paytm-back.vercel.app/api/v1/account/balance",
     {
       headers:{
         Authorization:`Bearer ${token}`
