@@ -17,7 +17,7 @@ const Sendmoney = () => {
         return setMessage("Please Enter A valid Amount");
       }
       const res = await axios.post(
-        "https://paytm-back.vercel.app/api/v1/account/transfer",
+        "https://paytm-back.vercel.app/api/v1/account/transfer/",
         {
           to: params.to,
           amount: Amountref.current.value,
